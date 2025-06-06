@@ -1,0 +1,10 @@
+// tsconfig.jest.json
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // For TSX files under Jest, use React’s JSX factory
+    "jsx": "react",
+    // Jest runs under CommonJS—this is critical.
+    "module": "commonjs"
+  }
+}
