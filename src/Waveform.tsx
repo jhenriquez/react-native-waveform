@@ -6,7 +6,7 @@ export interface AmplitudeSource {
 }
 
 export interface WaveformProps {
-  amplitudeSource: AmplitudeSource;
+  amplitudeSource?: AmplitudeSource;
   barCount?: number;
   barWidth?: number;
   barSpacing?: number;
@@ -66,7 +66,7 @@ export const Waveform: React.FC<WaveformProps> = ({
   );
 
   useEffect(() => {
-    return amplitudeSource.subscribe((amplitude: number) => {
+    return amplitudeSource?.subscribe((amplitude: number) => {
       const clamped = Math.max(amplitude, baseline);
       bufferRef.current = [...bufferRef.current.slice(1), clamped];
       setAmplitudes([...bufferRef.current]);
