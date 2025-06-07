@@ -1,2 +1,2 @@
 export { Waveform } from './Waveform';
-export type { WaveformProps } from './Waveform';
+export type { WaveformProps, AmplitudeSource } from './Waveform';
